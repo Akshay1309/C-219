@@ -26,11 +26,13 @@ const transporter = nodemailer.createTransport({
     port: 465,
     host: "smtp.gmail.com",
     auth: {
-        user: '',
+        user: 'singhjitendra48023@gmail.com',
         pass: '',
     },
     secure: true,
 });
+
+//
 
 app.get("/", (req, res) => {
     res.redirect(`/${uuidv4()}`);
@@ -40,11 +42,13 @@ app.get("/:room", (req, res) => {
     res.render("index", { roomId: req.params.room });
 });
 
+
+
 app.post("/send-mail", (req, res) => {
     const to = req.body.to;
     const url = req.body.url;
     const mailData = {
-        from: "apoorv.goyal@whitehatjr.com",
+        from: "singhjitendra48023@gmail.com",
         to: to,
         subject: "Join the video chat with me!",
         html: `<p>Hey there,</p><p>Come and join me for a video chat here - ${url}</p>`
