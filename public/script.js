@@ -77,6 +77,10 @@ $(function () {
         }
     })
 
+    $("#invite_button").click(function(){
+        const to = prompt("Enter ur Email")
+    })
+
     $("#mute_button").click(function () {
         const enabled = myStream.getAudioTracks()[0].enabled;
         if (enabled) {
